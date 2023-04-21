@@ -1,0 +1,15 @@
+Repository Pattern
+- dalam buku Domain-Driven Design, Eric Evans menjelaskan bahwa "Repository is a mechanism for ecnapsulating storage, retrieval, and search behavior
+  which emulates a collection of object"
+- Pattern Repository ini biasanya digunakan sebagai jembatan antar business logic aplikasi kita dengan semua perintah sql ke database
+- jadi semua perintah sql akan ditulis di Repository, sedangkan business logic kode program kita hanya cukup menggunakan Repository tersebut
+
+Diagram Repository Pattern
+- business logic->Repository->Model
+- Repository->RepositoryImpl->database
+
+Model
+- dalam pemrograman berorientasi object, biasanya sebuah table di database akan selalu dibuat representasinya sebagai class atau Model
+- ini bisa mempermudah ketika membuat kode program
+- misal ketika kita query ke Repository, dibanding mengembalikan array, alangkah baiknya Repository melakukan konversi terlebih dahulu ke class / Model,
+  sehingga kita tinggal menggunakan objectnya saja
